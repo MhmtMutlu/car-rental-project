@@ -6,7 +6,7 @@ using System.Text;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    class CarRentalContext:DbContext
+    public class CarRentalContext:DbContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
