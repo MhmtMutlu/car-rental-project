@@ -31,14 +31,14 @@ namespace Business.Concrete
             return new SuccessResult(Messages.Deleted);
         }
 
-        public List<Color> GetAll()
+        public IDataResult<List<Color>> GetAll()
         {
-            return _colorDal.GetAll();
+            return new SuccessDataResult<List<Color>>(_colorDal.GetAll(), Messages.ColorsListed);
         }
 
-        public Color GetById(int colorId)
+        public IDataResult<Color> GetById(int colorId)
         {
-            return _colorDal.Get(c => c.Id == colorId);
+            return new SuccessDataResult<Color>(_colorDal.Get(c => c.Id == colorId), Messages.ColorsListed);
         }
 
         public IResult Update(Color color)
